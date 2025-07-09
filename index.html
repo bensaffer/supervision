@@ -40,22 +40,20 @@
       }
 
       /* -------------
-         Curved logo  
+         Logo image  
       ------------- */
       .logo-wrapper {
         width: 100%;
         max-width: 1000px;
         margin: 0 auto;
       }
-      svg.logo-curve {
+      .logo-image {
         width: 100%;
+        max-width: 600px;
         height: auto;
-      }
-      svg.logo-curve text {
-        font-family: "Bebas Neue", sans-serif;
-        fill: var(--cream);
-        letter-spacing: 0.05em;
-        font-size: clamp(3rem, 8vw, 8rem);
+        display: block;
+        margin: 0 auto;
+        filter: invert(1);
       }
 
       h2 {
@@ -121,16 +119,8 @@
   </head>
   <body>
     <header class="logo-wrapper">
-      <!-- Curved SUPERVISION word‑mark via SVG textPath -->
-      <svg viewBox="0 0 1000 220" class="logo-curve" role="img" aria-labelledby="logoTitle">
-        <title id="logoTitle">SUPERVISION logo</title>
-        <defs>
-          <path id="curve" d="M50 170 Q500 70 950 170" />
-        </defs>
-        <text text-anchor="middle">
-          <textPath href="#curve" startOffset="50%">SUPERVISION</textPath>
-        </text>
-      </svg>
+      <!-- SUPERVISION logo -->
+      <img src="supervision-logo.svg" alt="SUPERVISION" class="logo-image" />
 
       <h2>VIRTUAL PRODUCTION</h2>
       <div class="stripes">
