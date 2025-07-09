@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SUPERVISION | Virtual Production</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #7b0f0f; /* deep red backdrop */
+        --cream: #fde9c9;
+        --orange: #d95a02;
+        --yellow: #e6a32f;
+        --teal: #0e5b66;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        background: var(--bg);
+        color: var(--cream);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      /* -------------
+         Curved logo  
+      ------------- */
+      .logo-wrapper {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      svg.logo-curve {
+        width: 100%;
+        height: auto;
+      }
+      svg.logo-curve text {
+        font-family: "Bebas Neue", sans-serif;
+        fill: var(--cream);
+        letter-spacing: 0.05em;
+        font-size: clamp(3rem, 8vw, 8rem);
+      }
+
+      h2 {
+        font-weight: 600;
+        margin-top: 0.75rem;
+        font-size: clamp(1rem, 2.3vw, 2.25rem);
+      }
+
+      /* Stripe stack */
+      .stripes {
+        display: flex;
+        flex-direction: column;
+        width: clamp(250px, 60%, 500px);
+        margin: 2rem auto;
+      }
+      .stripe {
+        height: 12px;
+        margin: 6px 0;
+      }
+      .orange {
+        background: var(--orange);
+      }
+      .yellow {
+        background: var(--yellow);
+      }
+      .teal {
+        background: var(--teal);
+      }
+
+      /* Sub‑brands */
+      .divisions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem 3rem;
+        justify-content: center;
+        margin-top: 3rem;
+      }
+      .card {
+        min-width: 220px;
+      }
+      .card h3 {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 2.5rem;
+      }
+      .descriptor {
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin-top: 0.25rem;
+      }
+      .orangeTxt { color: var(--orange); }
+      .yellowTxt { color: var(--yellow); }
+      .tealTxt   { color: var(--teal);   }
+
+      footer {
+        position: absolute;
+        bottom: 1rem;
+        width: 100%;
+        text-align: center;
+        font-size: 0.8rem;
+        color: #d8c6aa;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="logo-wrapper">
+      <!-- Curved SUPERVISION word‑mark via SVG textPath -->
+      <svg viewBox="0 0 1000 220" class="logo-curve" role="img" aria-labelledby="logoTitle">
+        <title id="logoTitle">SUPERVISION logo</title>
+        <defs>
+          <path id="curve" d="M50 170 Q500 70 950 170" />
+        </defs>
+        <text text-anchor="middle">
+          <textPath href="#curve" startOffset="50%">SUPERVISION</textPath>
+        </text>
+      </svg>
+
+      <h2>VIRTUAL PRODUCTION</h2>
+      <div class="stripes">
+        <div class="stripe orange"></div>
+        <div class="stripe yellow"></div>
+        <div class="stripe teal"></div>
+      </div>
+    </header>
+
+    <section class="divisions">
+      <div class="card">
+        <h3>SUPERVISION</h3>
+        <div class="descriptor orangeTxt">CONSULTING</div>
+      </div>
+      <div class="card">
+        <h3>SUPERVISION</h3>
+        <div class="descriptor yellowTxt">TALENT</div>
+      </div>
+      <div class="card">
+        <h3>SUPERVISION</h3>
+        <div class="descriptor tealTxt">EDUCATION</div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> SUPERVISION • All rights reserved
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
