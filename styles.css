@@ -658,6 +658,187 @@ h1 {
 }
 
 /* ============================================
+   FORK SECTION
+   ============================================ */
+.fork-section {
+  padding: 80px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg,
+    rgba(107, 21, 26, 0.3) 0%,
+    rgba(74, 14, 18, 0.5) 100%
+  );
+}
+
+.fork-intro {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.fork-intro h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--cream);
+  margin: 0;
+}
+
+.fork-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Fork Card */
+.fork-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform var(--duration-normal) var(--ease-out),
+              border-color var(--duration-normal) ease,
+              box-shadow var(--duration-normal) ease;
+}
+
+.fork-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Stripe accent */
+.fork-card-stripe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  transition: height var(--duration-normal) ease;
+}
+
+.fork-card--productions .fork-card-stripe {
+  background: var(--stripe-teal);
+}
+
+.fork-card--inhouse .fork-card-stripe {
+  background: var(--stripe-orange);
+}
+
+.fork-card:hover .fork-card-stripe {
+  height: 6px;
+}
+
+/* Card content */
+.fork-card-content {
+  flex: 1;
+}
+
+.fork-card h3 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--cream);
+  margin: 0 0 12px;
+}
+
+.fork-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Reveal content on hover */
+.fork-card-reveal {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height var(--duration-normal) var(--ease-out),
+              opacity var(--duration-normal) ease,
+              margin var(--duration-normal) ease;
+}
+
+.fork-card:hover .fork-card-reveal {
+  max-height: 150px;
+  opacity: 1;
+  margin-top: 20px;
+}
+
+.fork-card-reveal ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fork-card-reveal li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.fork-card-reveal li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--stripe-gold);
+}
+
+/* CTA */
+.fork-card-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--stripe-gold);
+}
+
+.fork-card-cta .arrow {
+  transition: transform var(--duration-fast) ease;
+}
+
+.fork-card:hover .fork-card-cta .arrow {
+  transform: translateX(6px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .fork-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .fork-card {
+    padding: 24px;
+  }
+
+  .fork-card-reveal {
+    max-height: none;
+    opacity: 1;
+    margin-top: 16px;
+  }
+}
+
+/* ============================================
    SPLIT LAYOUT
    ============================================ */
 .split {
