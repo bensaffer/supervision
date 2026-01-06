@@ -549,117 +549,12 @@ h1 {
 }
 
 /* ============================================
-   FORK SECTION (Homepage feature)
+   FORK SECTION
    ============================================ */
-.fork {
-  grid-column: 1 / -1;
-  padding: 32px;
-  border-radius: var(--radius-xl);
-  background:
-    radial-gradient(ellipse 50% 80% at 0% 0%, rgba(204, 85, 0, 0.12), transparent),
-    radial-gradient(ellipse 50% 80% at 100% 0%, rgba(26, 107, 107, 0.10), transparent),
-    linear-gradient(180deg, rgba(139, 28, 35, 0.7), rgba(107, 21, 26, 0.5));
-  border: 1px solid rgba(245, 230, 211, 0.15);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Stripe decoration */
-.fork::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg,
-    var(--stripe-orange) 0%,
-    var(--stripe-orange) 33%,
-    var(--stripe-gold) 33%,
-    var(--stripe-gold) 66%,
-    var(--stripe-teal) 66%,
-    var(--stripe-teal) 100%
-  );
-}
-
-.forkHead {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-.forkHead h2 {
-  font-family: var(--font-display);
-  font-size: 28px;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  margin: 0;
-  color: var(--cream);
-}
-.forkHead p {
-  font-size: 15px;
-  color: var(--text-muted);
-  margin: 8px 0 0;
-  max-width: 55ch;
-}
-
-.forkCards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 24px;
-}
-
-.forkCard {
-  padding: 20px;
-  border-radius: var(--radius-lg);
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid var(--border);
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
-.forkCard:hover {
-  background: rgba(0, 0, 0, 0.3);
-  border-color: var(--border-hover);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
-}
-.forkCard h3 {
-  font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  margin: 0 0 8px;
-  color: var(--cream);
-}
-.forkCard .meta {
-  font-size: 13px;
-  color: var(--text-subtle);
-  margin: 0 0 16px;
-  line-height: 1.5;
-}
-.forkCard .go {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--stripe-gold);
-}
 .arrow {
   font-size: 16px;
   transition: transform 0.2s ease;
 }
-.forkCard:hover .arrow {
-  transform: translateX(4px);
-}
-
-/* ============================================
-   FORK SECTION
-   ============================================ */
 .fork-section {
   padding: 80px 0;
   border-top: 1px solid var(--border);
@@ -988,9 +883,6 @@ h1 {
   .navlinks {
     display: none;
   }
-  .forkCards {
-    grid-template-columns: 1fr;
-  }
   .split {
     grid-template-columns: 1fr;
   }
@@ -1005,12 +897,6 @@ h1 {
   }
   .hero {
     padding: 24px 0;
-  }
-  .fork {
-    padding: 24px;
-  }
-  .forkHead h2 {
-    font-size: 22px;
   }
   .cols2 {
     grid-template-columns: 1fr;
