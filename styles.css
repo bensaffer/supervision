@@ -1103,3 +1103,51 @@ h1 {
 .proof-logos .client-logo:hover {
   opacity: 1;
 }
+
+/* ============================================
+   DIFFERENTIATORS
+   ============================================ */
+.differentiators {
+  padding: 80px 0;
+}
+
+.diff-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.diff-card {
+  text-align: center;
+  padding: 32px 24px;
+}
+
+.diff-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
+
+.diff-card h3 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--cream);
+  margin: 0 0 12px;
+}
+
+.diff-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .diff-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
