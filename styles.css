@@ -1065,3 +1065,41 @@ h1 {
   opacity: 1;
   transform: translateX(0);
 }
+
+/* ============================================
+   SOCIAL PROOF BAR
+   ============================================ */
+.social-proof {
+  padding: 48px 0;
+  background: var(--burgundy-darker);
+  text-align: center;
+}
+
+.proof-text {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 3vw, 28px);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--cream);
+  margin: 0 0 24px;
+}
+
+.proof-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  align-items: center;
+}
+
+.proof-logos .client-logo {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-muted);
+  opacity: 0.6;
+  transition: opacity var(--duration-fast) ease;
+}
+
+.proof-logos .client-logo:hover {
+  opacity: 1;
+}
