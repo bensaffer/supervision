@@ -51,3 +51,13 @@ if (header) {
     }
   }, { passive: true });
 }
+
+// Parallax effect for hero image
+const heroVisual = document.querySelector('.hero-visual');
+if (heroVisual) {
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * 0.3;
+    heroVisual.style.transform = `translateY(${rate}px)`;
+  }, { passive: true });
+}

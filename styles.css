@@ -881,9 +881,21 @@ h1 {
   height: 100%;
 }
 
+@keyframes stripeShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 .footer-stripe::before {
   flex: 2;
-  background: linear-gradient(90deg, var(--stripe-orange) 0%, var(--stripe-orange) 50%, var(--stripe-gold) 50%, var(--stripe-gold) 100%);
+  background: linear-gradient(90deg,
+    var(--stripe-orange),
+    var(--stripe-gold),
+    var(--stripe-orange)
+  );
+  background-size: 200% 100%;
+  animation: stripeShimmer 8s ease infinite;
 }
 
 .footer-stripe::after {
