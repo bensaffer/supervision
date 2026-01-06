@@ -861,51 +861,100 @@ h1 {
    FOOTER
    ============================================ */
 .footer {
-  border-top: 1px solid var(--border);
-  padding: 32px 0;
   position: relative;
+  padding: 60px 0 32px;
+  background: var(--burgundy-darker);
 }
 
-/* Stripe decoration on footer */
-.footer::before {
-  content: '';
+.footer-stripe {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg,
-    var(--stripe-orange) 0%,
-    var(--stripe-orange) 33%,
-    var(--stripe-gold) 33%,
-    var(--stripe-gold) 66%,
-    var(--stripe-teal) 66%,
-    var(--stripe-teal) 100%
-  );
+  height: 4px;
+  display: flex;
 }
 
-.footer .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
+.footer-stripe::before,
+.footer-stripe::after {
+  content: '';
+  height: 100%;
 }
-.footer-brand {
-  font-family: var(--font-display);
-  font-size: 18px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+
+.footer-stripe::before {
+  flex: 2;
+  background: linear-gradient(90deg, var(--stripe-orange) 0%, var(--stripe-orange) 50%, var(--stripe-gold) 50%, var(--stripe-gold) 100%);
+}
+
+.footer-stripe::after {
+  flex: 1;
+  background: var(--stripe-teal);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+.footer-brand .brand {
+  margin-bottom: 16px;
+}
+
+.footer-tagline {
+  font-size: 14px;
   color: var(--text-muted);
+  margin: 0;
 }
-.footer-links {
+
+.footer-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  margin-bottom: 16px;
+}
+
+.footer-links,
+.footer-contact {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a,
+.footer-contact a,
+.footer-contact p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+  transition: color var(--duration-fast) ease;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+  color: var(--cream);
+}
+
+.footer-bottom {
+  padding-top: 24px;
+}
+
+.footer-bottom p {
   font-size: 13px;
   color: var(--text-subtle);
+  margin: 0;
 }
-.footer-links a:hover {
-  color: var(--text);
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
 }
 
 /* ============================================
