@@ -1280,3 +1280,39 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================
+   FINAL CTA
+   ============================================ */
+.final-cta {
+  padding: 80px 0;
+}
+
+.cta-box {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 48px;
+  background: linear-gradient(135deg,
+    rgba(204, 85, 0, 0.1) 0%,
+    rgba(26, 107, 107, 0.1) 100%
+  );
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+}
+
+.cta-box h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 36px);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--cream);
+  margin: 0 0 16px;
+}
+
+.cta-box p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0 0 28px;
+}
