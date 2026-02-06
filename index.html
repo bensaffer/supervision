@@ -1,220 +1,192 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Supervision – Virtual Production</title>
-  <link rel="stylesheet" href="styles.css"/>
-</head>
-<body>
-<header>
-  <div class="container">
-    <div class="nav">
-      <a class="brand" href="index.html">
-        <div class="logoMark" aria-hidden="true"></div>
-        <div class="brandName">Supervision<span>Virtual Production</span></div>
-      </a>
-      <nav class="navlinks">
-        <a href="work.html">Work</a>
-        <a href="how-we-work.html">How We Work</a>
-        <a href="about.html">About</a>
-      </nav>
-      <a class="cta" href="contact.html">Start a Conversation</a>
-    </div>
-  </div>
-</header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SUPERVISION | Virtual Production</title>
 
-<main class="container">
-  <section class="hero-split">
-    <div class="hero-content animate-on-scroll">
-      <div class="kicker">Virtual Production • Production-Led</div>
-      <h1>Virtual production that starts with your problem, not the technology</h1>
-      <p class="lede">
-        We help productions and organisations use VP when it genuinely makes sense – and tell you when it doesn't.
-      </p>
-      <div class="hero-logos animate-fade stagger-2">
-        <span class="logo-label">Trusted by</span>
-        <div class="logo-strip">
-          <span class="client-logo">BBC</span>
-          <span class="client-logo">ITV</span>
-          <span class="client-logo">Dyson</span>
-          <span class="client-logo">BAFTA</span>
-          <span class="client-logo">Apple</span>
-        </div>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #7b0f0f; /* deep red backdrop */
+        --cream: #fde9c9;
+        --orange: #d95a02;
+        --yellow: #e6a32f;
+        --teal: #0e5b66;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        background: var(--bg);
+        color: var(--cream);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        text-align: center;
+        padding: 2rem;
+        position: relative;
+      }
+
+      /* -------------
+         Logo image  
+      ------------- */
+      .logo-wrapper {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      .logo-image {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        filter: brightness(0) saturate(100%) invert(94%) sepia(13%) saturate(499%) hue-rotate(342deg) brightness(103%) contrast(98%);
+      }
+
+      h2 {
+        font-weight: 600;
+        margin-top: 0.75rem;
+        font-size: clamp(1rem, 2.3vw, 2.25rem);
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      /* Stripe stack */
+      .stripes {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 600px;
+        margin: 2rem auto;
+      }
+      .stripe {
+        height: 12px;
+        margin: 6px 0;
+      }
+      .orange {
+        background: var(--orange);
+      }
+      .yellow {
+        background: var(--yellow);
+      }
+      .teal {
+        background: var(--teal);
+      }
+
+      /* Sub‑brands */
+      .divisions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: space-between;
+        margin-top: 3rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+      }
+      .card {
+        flex: 1;
+        min-width: 150px;
+        text-align: center;
+      }
+      .card h3 {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 2.5rem;
+      }
+      .descriptor {
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin-top: 0.25rem;
+      }
+      .orangeTxt { color: var(--orange); }
+      .yellowTxt { color: var(--yellow); }
+      .tealTxt   { color: var(--teal);   }
+
+      footer {
+        margin-top: 3rem;
+        padding: 1rem;
+        text-align: center;
+        font-size: 0.8rem;
+        color: #d8c6aa;
+        opacity: 0.8;
+      }
+
+      /* Responsive for mobile */
+      @media (max-width: 768px) {
+        body {
+          padding: 1rem;
+        }
+        
+        .divisions {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+        
+        .card {
+          width: 100%;
+        }
+        
+        .card h3 {
+          font-size: 2rem;
+        }
+        
+        h2 {
+          font-size: 1rem;
+          letter-spacing: 0.1em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="logo-wrapper">
+      <!-- SUPERVISION logo -->
+      <img src="supervision-logo.svg" alt="SUPERVISION" class="logo-image" />
+
+      <h2>VIRTUAL PRODUCTION</h2>
+      <div class="stripes">
+        <div class="stripe orange"></div>
+        <div class="stripe yellow"></div>
+        <div class="stripe teal"></div>
       </div>
-    </div>
-    <div class="hero-visual animate-scale stagger-1">
-      <div class="hero-image-wrapper">
-        <div class="hero-image-placeholder">
-          <!-- Replace with actual image: <img src="path/to/hero.jpg" alt="Virtual production on set"> -->
-          <div class="placeholder-text">Hero Image</div>
-        </div>
-        <div class="hero-stripes" aria-hidden="true"></div>
+    </header>
+
+    <section class="divisions">
+      <div class="card">
+        <h3>SUPERVISION</h3>
+        <div class="descriptor orangeTxt">CONSULTING</div>
       </div>
-    </div>
-  </section>
-
-  <div class="grid">
-    <section class="fork-section" id="fork">
-      <div class="fork-intro animate-on-scroll">
-        <h2>How can we help?</h2>
+      <div class="card">
+        <h3>SUPERVISION</h3>
+        <div class="descriptor yellowTxt">TALENT</div>
       </div>
-
-      <div class="fork-cards">
-        <a href="vp-commercials.html" class="fork-card fork-card--productions animate-on-scroll stagger-1">
-          <div class="fork-card-stripe"></div>
-          <div class="fork-card-content">
-            <h3>TV, Film & Commercials</h3>
-            <p>We help productions solve real problems with VP – narrative, factual, branded content.</p>
-          </div>
-          <div class="fork-card-reveal">
-            <ul>
-              <li>Schedule & budget-led approach</li>
-              <li>Plates, LED, CG – whatever fits</li>
-              <li>On-set and post supervision</li>
-            </ul>
-          </div>
-          <div class="fork-card-cta">
-            Explore VP for productions <span class="arrow">→</span>
-          </div>
-        </a>
-
-        <a href="vp-inhouse.html" class="fork-card fork-card--inhouse animate-on-scroll stagger-2">
-          <div class="fork-card-stripe"></div>
-          <div class="fork-card-content">
-            <h3>In-House & Corporate</h3>
-            <p>Build VP capability for ongoing content creation – without the massive upfront spend.</p>
-          </div>
-          <div class="fork-card-reveal">
-            <ul>
-              <li>Feasibility & planning</li>
-              <li>Training & upskilling</li>
-              <li>Scalable system design</li>
-            </ul>
-          </div>
-          <div class="fork-card-cta">
-            Explore VP in-house <span class="arrow">→</span>
-          </div>
-        </a>
+      <div class="card">
+        <h3>SUPERVISION</h3>
+        <div class="descriptor tealTxt">EDUCATION</div>
       </div>
     </section>
 
-    <section class="social-proof animate-fade">
-      <div class="container">
-        <p class="proof-text">BAFTA-nominated work. Major broadcasters. Global brands.</p>
-        <div class="proof-logos">
-          <span class="client-logo">BBC</span>
-          <span class="client-logo">ITV</span>
-          <span class="client-logo">Dyson</span>
-          <span class="client-logo">BAFTA</span>
-          <span class="client-logo">World Productions</span>
-          <span class="client-logo">Apple</span>
-        </div>
-      </div>
-    </section>
+    <footer>
+      © <span id="year"></span> SUPERVISION • All rights reserved
+    </footer>
 
-    <section class="differentiators">
-      <div class="container">
-        <div class="diff-grid">
-          <div class="diff-card animate-on-scroll stagger-1">
-            <div class="diff-dot" style="background: var(--stripe-teal);"></div>
-            <h3>Production-first</h3>
-            <p>We start with schedule, budget, and risk – not the technology.</p>
-          </div>
-          <div class="diff-card animate-on-scroll stagger-2">
-            <div class="diff-dot" style="background: var(--stripe-orange);"></div>
-            <h3>Tool-agnostic</h3>
-            <p>Plates, LED, CG, AI – we use what fits the problem.</p>
-          </div>
-          <div class="diff-card animate-on-scroll stagger-3">
-            <div class="diff-dot" style="background: var(--stripe-gold);"></div>
-            <h3>Honest advice</h3>
-            <p>We'll tell you if VP isn't right for your project.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="featured-work">
-      <div class="container">
-        <div class="section-header animate-on-scroll">
-          <span class="smallcaps">Selected Work</span>
-          <h2>Projects we've supervised</h2>
-        </div>
-
-        <div class="work-grid">
-          <a href="work.html" class="work-card animate-on-scroll stagger-1">
-            <div class="work-card-image">
-              <div class="placeholder-text">Vigil Image</div>
-            </div>
-            <div class="work-card-content">
-              <span class="work-card-tag">Narrative</span>
-              <h3>Vigil</h3>
-              <p>BBC</p>
-            </div>
-            <div class="work-card-hover">View project →</div>
-          </a>
-
-          <a href="work.html" class="work-card animate-on-scroll stagger-2">
-            <div class="work-card-image">
-              <div class="placeholder-text">Dyson Image</div>
-            </div>
-            <div class="work-card-content">
-              <span class="work-card-tag">Commercial</span>
-              <h3>Dyson</h3>
-              <p>Cube Studios</p>
-            </div>
-            <div class="work-card-hover">View project →</div>
-          </a>
-        </div>
-
-        <div class="work-more animate-fade">
-          <a href="work.html" class="cta">See all work</a>
-        </div>
-      </div>
-    </section>
-
-  <section class="final-cta">
-    <div class="container">
-      <div class="cta-box animate-scale">
-        <h2>Not sure where to start?</h2>
-        <p>No pitch deck. No pressure. Just a conversation about what you're trying to achieve.</p>
-        <a href="contact.html" class="cta primary">Start a conversation</a>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="footer">
-  <div class="footer-stripe" aria-hidden="true"></div>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="brand">
-          <div class="logoMark" aria-hidden="true"></div>
-          <div class="brandName">Supervision<span>Virtual Production</span></div>
-        </div>
-        <p class="footer-tagline">Production-led virtual production.</p>
-      </div>
-      <div class="footer-links">
-        <span class="footer-label">Navigation</span>
-        <a href="work.html">Work</a>
-        <a href="how-we-work.html">How We Work</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="footer-contact">
-        <span class="footer-label">Get in touch</span>
-        <a href="mailto:hello@supervision.film">hello@supervision.film</a>
-        <p>UK-based</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Supervision. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
-
-<script src="script.js"></script>
-</body>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>

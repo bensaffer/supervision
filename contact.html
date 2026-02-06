@@ -4,6 +4,8 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Contact – Supervision VP</title>
+  <meta name="description" content="Get in touch with Supervision. No pitch deck, no pressure — just a straight answer about whether VP fits your project.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
@@ -11,12 +13,17 @@
   <div class="container">
     <div class="nav">
       <a class="brand" href="index.html">
-        <div class="logoMark" aria-hidden="true"></div>
-        <div class="brandName">Supervision<span>Virtual Production</span></div>
+        <img src="logo-wordmark.png" alt="Supervision" class="brand-logo brand-logo-header">
       </a>
       <nav class="navlinks">
-        <a href="work.html">Work</a>
         <a href="how-we-work.html">How We Work</a>
+        <div class="nav-dropdown">
+          <a href="#" class="nav-dropdown-trigger">Services <span class="dropdown-arrow">&#9662;</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="vp-productions.html">Productions</a>
+            <a href="vp-inhouse.html">In-House</a>
+          </div>
+        </div>
         <a href="about.html">About</a>
       </nav>
       <a class="cta" href="contact.html">Start a Conversation</a>
@@ -31,27 +38,38 @@
     <div class="kicker">Contact</div>
     <h1>Start a conversation.</h1>
     <p class="lede">
-      No "book a demo". No pressure. If you've got a question, we'll give you a straight answer.
+      No pitch deck. No pressure. If you've got a question, we'll give you a straight answer.
     </p>
   </section>
 
   <div class="grid">
     <section class="card" style="grid-column:span 7">
       <h3>Send a Note</h3>
-      <p style="color:rgba(245,230,211,.82); font-size:14px; margin-top:6px;">
-        This is a static prototype. In WordPress, this becomes a form or a mail link.
-      </p>
-      <div class="hr"></div>
-      <p><b>Email:</b> hello@supervision.film <span style="opacity:.7;">(placeholder)</span></p>
-      <p><b>Based in:</b> UK</p>
+      <form class="contact-form" action="#" method="post">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">What are you working on?</label>
+          <textarea id="message" name="message" rows="5"></textarea>
+        </div>
+        <button type="submit" class="cta primary">Send</button>
+      </form>
+      <div class="hr" style="margin-top: 2rem;"></div>
+      <p>Or email us directly: <a href="mailto:hello@supervisionvp.com"><b>hello@supervisionvp.com</b></a></p>
     </section>
 
     <aside class="card subtle" style="grid-column:span 5">
       <div class="smallcaps">Good Starting Prompts</div>
       <ul class="list">
-        <li>"We're considering VP – where should we start?"</li>
+        <li>"We're considering VP — where should we start?"</li>
         <li>"Could VP reduce weather risk / travel / cast days?"</li>
-        <li>"We want an in-house setup – what scale makes sense?"</li>
+        <li>"We want an in-house setup — what scale makes sense?"</li>
       </ul>
     </aside>
   </div>
@@ -62,22 +80,22 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="brand">
-          <div class="logoMark" aria-hidden="true"></div>
-          <div class="brandName">Supervision<span>Virtual Production</span></div>
-        </div>
+        <a class="brand" href="index.html">
+          <img src="logo-full.png" alt="Supervision – Virtual Production" class="brand-logo brand-logo-footer">
+        </a>
         <p class="footer-tagline">Production-led virtual production.</p>
       </div>
       <div class="footer-links">
         <span class="footer-label">Navigation</span>
-        <a href="work.html">Work</a>
         <a href="how-we-work.html">How We Work</a>
+        <a href="vp-productions.html">VP for Productions</a>
+        <a href="vp-inhouse.html">VP In-House</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </div>
       <div class="footer-contact">
         <span class="footer-label">Get in touch</span>
-        <a href="mailto:hello@supervision.film">hello@supervision.film</a>
+        <a href="mailto:hello@supervisionvp.com">hello@supervisionvp.com</a>
         <p>UK-based</p>
       </div>
     </div>

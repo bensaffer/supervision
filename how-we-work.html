@@ -4,6 +4,8 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>How We Work – Supervision VP</title>
+  <meta name="description" content="Four VP techniques — Unreal Engine, plates, scans, and augmented plates. We start with what you need and work backwards to the right tool.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
@@ -11,12 +13,17 @@
   <div class="container">
     <div class="nav">
       <a class="brand" href="index.html">
-        <div class="logoMark" aria-hidden="true"></div>
-        <div class="brandName">Supervision<span>Virtual Production</span></div>
+        <img src="logo-wordmark.png" alt="Supervision" class="brand-logo brand-logo-header">
       </a>
       <nav class="navlinks">
-        <a href="work.html">Work</a>
         <a href="how-we-work.html" class="active">How We Work</a>
+        <div class="nav-dropdown">
+          <a href="#" class="nav-dropdown-trigger">Services <span class="dropdown-arrow">&#9662;</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="vp-productions.html">Productions</a>
+            <a href="vp-inhouse.html">In-House</a>
+          </div>
+        </div>
         <a href="about.html">About</a>
       </nav>
       <a class="cta" href="contact.html">Start a Conversation</a>
@@ -28,38 +35,81 @@
   <div class="breadcrumbs"><a href="index.html">Home</a> / <span>How We Work</span></div>
 
   <section class="hero" style="padding-top:10px;">
-    <div class="kicker">Method</div>
-    <h1>Production-first. Tool-agnostic. Clear decision-making.</h1>
-    <p class="lede">A simple set of principles that keeps VP legible for production.</p>
+    <div class="kicker">How We Work</div>
+    <h1>Different tools. One principle: use what fits the shot.</h1>
+    <p class="lede">Every project is different. We don't default to one approach — we start with what you need and work backwards to the right tool.</p>
   </section>
 
-  <div class="grid">
-    <section class="card" style="grid-column:span 6">
-      <h3>1) Start with Constraints</h3>
-      <p>Schedule, budget, risk, locations, cast – before choosing any technique.</p>
-    </section>
-    <section class="card" style="grid-column:span 6">
-      <h3>2) Choose the Minimum Viable Complexity</h3>
-      <p>If plates solve it, use plates. If LED helps, use LED. If neither helps, don't force it.</p>
-    </section>
-    <section class="card" style="grid-column:span 6">
-      <h3>3) Keep Production in the Loop</h3>
-      <p>No black-box workflows. Decisions should be explainable to producers and line producers.</p>
-    </section>
-    <section class="card" style="grid-column:span 6">
-      <h3>4) Protect Creative Freedom</h3>
-      <p>VP should remove constraints, not add new ones.</p>
+  <div class="technique-hero-image">
+    <img src="images/how-we-work/nara-led-wall.jpg" alt="Unreal Engine environment displayed on an LED wall on a VP stage">
+  </div>
+
+  <div class="technique-cards">
+    <section class="technique-section" id="unreal">
+      <h2 class="smallcaps">Technique</h2>
+      <h3>Unreal Engine</h3>
+      <p>Real-time 3D environments built in Unreal Engine, displayed on LED walls. Full control over lighting, weather, time of day, and camera angle — all changeable on set, in real time.</p>
+      <div class="hr"></div>
+      <p><b>Best for:</b> environments that don't exist, need to be fully controllable, or would be impractical to reach on location.</p>
+      <div class="hr"></div>
+      <p>On Don't Look, we built an ancient Roman temple on an LED stage in Wakefield. For the BAFTA Games Awards, we created several Unreal environments with live in-camera transitions between them.</p>
+      <div class="technique-callout">
+        <div class="callout-images callout-images--trio">
+          <figure>
+            <img src="images/how-we-work/nara-unreal-day.jpg" alt="NARA environment — daytime">
+            <figcaption>Daytime</figcaption>
+          </figure>
+          <figure>
+            <img src="images/how-we-work/nara-unreal-snow.jpg" alt="NARA environment — snow">
+            <figcaption>Snow</figcaption>
+          </figure>
+          <figure>
+            <img src="images/how-we-work/nara-unreal-night.jpg" alt="NARA environment — night">
+            <figcaption>Night</figcaption>
+          </figure>
+        </div>
+        <p class="callout-caption">Same location. Three looks. All changed in minutes.</p>
+      </div>
     </section>
 
-    <section class="card" style="grid-column:1/-1">
-      <h3>Plates-First Thinking</h3>
-      <p>
-        We use plates heavily because they're often the quickest path to believable worlds – and they keep the process grounded in production realities.
-      </p>
+    <section class="technique-section" id="plates">
+      <h2 class="smallcaps">Technique</h2>
+      <h3>Plates</h3>
+      <p>Filmed footage of real locations — driven, flown, or locked off — played back on LED or used in post. The simplest route to a believable world. Plates can also be augmented with CG, compositing, or AI tools — adding, removing, or transforming elements while keeping the realism of real footage.</p>
       <div class="hr"></div>
-      <a class="cta" href="contact.html">Explore Where VP Might Fit</a>
+      <p><b>Best for:</b> when real locations give you the best result but logistics, weather, or schedule make filming there impractical.</p>
+      <div class="hr"></div>
+      <p>Ben has shot plates for No Time to Die and Meg 2. On Vigil (BBC), plates were central to the VP approach — capturing real locations and bringing them into the stage.</p>
+      <div class="technique-callout">
+        <div class="callout-images callout-images--single">
+          <figure>
+            <img src="images/how-we-work/plates-rig-bts.jpg" alt="Supervision plates rig on location">
+          </figure>
+        </div>
+        <p class="callout-caption">Our plates rig on location.</p>
+      </div>
+      <!-- TODO: Add NARA plate still when available -->
+    </section>
+
+    <section class="technique-section" id="scans">
+      <h2 class="smallcaps">Technique</h2>
+      <h3>Scans</h3>
+      <p>3D captures of real locations that can be relit, repositioned, and viewed from any angle. All the realism of a plate with the flexibility of a 3D environment.</p>
+      <div class="hr"></div>
+      <p><b>Best for:</b> when you need the look of a real place but also need to move the camera or change the lighting.</p>
+      <div class="hr"></div>
+      <p>We use 3D Gaussian splatting — a technique that's still very new but already changing what's possible at every budget level. A real location captured in minutes, navigable in 3D, and usable on set. It's one of the most exciting developments in VP right now.</p>
+      <!-- TODO: Add NARA 3DGS scan still when available -->
     </section>
   </div>
+
+  <section class="final-cta" style="padding: 80px 0;">
+    <div class="cta-box animate-scale">
+      <h2>Not sure which approach fits?</h2>
+      <p>Neither are most people when they first call us. See how we apply these techniques for <a href="vp-productions.html">TV, film, and commercials</a> or <a href="vp-inhouse.html">in-house teams</a>.</p>
+      <a href="contact.html" class="cta primary">Start a conversation</a>
+    </div>
+  </section>
 </main>
 
 <footer class="footer">
@@ -67,22 +117,22 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="brand">
-          <div class="logoMark" aria-hidden="true"></div>
-          <div class="brandName">Supervision<span>Virtual Production</span></div>
-        </div>
+        <a class="brand" href="index.html">
+          <img src="logo-full.png" alt="Supervision – Virtual Production" class="brand-logo brand-logo-footer">
+        </a>
         <p class="footer-tagline">Production-led virtual production.</p>
       </div>
       <div class="footer-links">
         <span class="footer-label">Navigation</span>
-        <a href="work.html">Work</a>
         <a href="how-we-work.html">How We Work</a>
+        <a href="vp-productions.html">VP for Productions</a>
+        <a href="vp-inhouse.html">VP In-House</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </div>
       <div class="footer-contact">
         <span class="footer-label">Get in touch</span>
-        <a href="mailto:hello@supervision.film">hello@supervision.film</a>
+        <a href="mailto:hello@supervisionvp.com">hello@supervisionvp.com</a>
         <p>UK-based</p>
       </div>
     </div>
