@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Connect – Supervision VP</title>
+  <meta name="description" content="Connect with Supervision at BSC Expo 2026.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    /* Connect page — minimal, mobile-first */
+    body {
+      background: var(--bg-burgundy);
+      color: var(--text-on-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .connect-header {
+      padding: 32px 0 0;
+      text-align: center;
+    }
+
+    .connect-header .brand-logo {
+      height: 28px;
+      filter: brightness(0) saturate(100%) invert(94%) sepia(13%) saturate(499%) hue-rotate(342deg) brightness(103%) contrast(98%);
+    }
+
+    .connect-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 24px 48px;
+      max-width: 480px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .connect-intro {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .connect-intro h1 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 8vw, 48px);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      line-height: 1;
+      color: var(--cream);
+      margin: 0 0 12px;
+    }
+
+    .connect-intro p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-on-dark-muted);
+      margin: 0;
+    }
+
+    .connect-stripe {
+      display: flex;
+      gap: 4px;
+      width: 80px;
+      height: 4px;
+      margin: 20px auto 0;
+    }
+    .connect-stripe span:first-child {
+      flex: 2;
+      background: linear-gradient(90deg, var(--stripe-orange), var(--stripe-gold));
+      border-radius: 2px;
+    }
+    .connect-stripe span:last-child {
+      flex: 0.8;
+      background: var(--stripe-teal);
+      border-radius: 2px;
+    }
+
+    /* Form */
+    .connect-form {
+      width: 100%;
+    }
+
+    .connect-field {
+      margin-bottom: 16px;
+    }
+
+    .connect-field label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-on-dark-subtle);
+      margin-bottom: 6px;
+    }
+
+    .connect-field input,
+    .connect-field textarea {
+      width: 100%;
+      padding: 14px 16px;
+      font-family: var(--font-body);
+      font-size: 16px; /* prevents iOS zoom */
+      color: var(--cream);
+      background: rgba(255, 235, 200, 0.08);
+      border: 1px solid var(--border-on-dark);
+      border-radius: var(--radius);
+      transition: border-color var(--duration-fast) ease,
+                  background var(--duration-fast) ease;
+      -webkit-appearance: none;
+    }
+
+    .connect-field input::placeholder,
+    .connect-field textarea::placeholder {
+      color: var(--text-on-dark-subtle);
+    }
+
+    .connect-field input:focus,
+    .connect-field textarea:focus {
+      outline: none;
+      border-color: var(--stripe-orange);
+      background: rgba(255, 235, 200, 0.12);
+    }
+
+    .connect-field textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .connect-submit {
+      width: 100%;
+      padding: 16px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--stripe-orange);
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background var(--duration-fast) ease,
+                  transform var(--duration-fast) ease;
+      margin-top: 8px;
+    }
+
+    .connect-submit:hover {
+      background: #E66A10;
+    }
+
+    .connect-submit:active {
+      transform: scale(0.98);
+    }
+
+    .connect-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    /* Success state */
+    .connect-success {
+      display: none;
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    .connect-success.show {
+      display: block;
+    }
+
+    .connect-success h2 {
+      font-family: var(--font-display);
+      font-size: 36px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--cream);
+      margin: 0 0 12px;
+    }
+
+    .connect-success p {
+      font-size: 16px;
+      color: var(--text-on-dark-muted);
+      margin: 0;
+    }
+
+    .connect-success .checkmark {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(14, 91, 102, 0.3);
+      border: 2px solid var(--stripe-teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 28px;
+    }
+
+    /* Footer stripe */
+    .connect-footer {
+      padding: 24px;
+      text-align: center;
+    }
+
+    .connect-footer p {
+      font-size: 13px;
+      color: var(--text-on-dark-subtle);
+      margin: 0;
+    }
+
+    .connect-footer a {
+      color: var(--text-on-dark-muted);
+    }
+    .connect-footer a:hover {
+      color: var(--cream);
+    }
+
+    /* Error state */
+    .connect-error {
+      display: none;
+      padding: 12px 16px;
+      background: rgba(217, 90, 2, 0.15);
+      border: 1px solid rgba(217, 90, 2, 0.3);
+      border-radius: var(--radius);
+      font-size: 14px;
+      color: var(--stripe-gold);
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .connect-error.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<div class="connect-header">
+  <div class="container">
+    <a href="index.html">
+      <img src="logo-wordmark.png" alt="Supervision" class="brand-logo">
+    </a>
+  </div>
+</div>
+
+<main class="connect-main">
+  <div class="connect-intro">
+    <h1>Let's Connect</h1>
+    <p>Drop your details and we'll follow up after the show.</p>
+    <div class="connect-stripe"><span></span><span></span></div>
+  </div>
+
+  <div class="connect-error" id="formError">
+    Something went wrong. Try again or email us at hello@supervisionvp.com
+  </div>
+
+  <form class="connect-form" id="connectForm">
+    <div class="connect-field">
+      <label for="name">Name *</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name">
+    </div>
+    <div class="connect-field">
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
+    </div>
+    <div class="connect-field">
+      <label for="company">Company</label>
+      <input type="text" id="company" name="company" placeholder="Company or production" autocomplete="organization">
+    </div>
+    <div class="connect-field">
+      <label for="role">Role</label>
+      <input type="text" id="role" name="role" placeholder="e.g. Producer, DoP, VFX Sup" autocomplete="organization-title">
+    </div>
+    <div class="connect-field">
+      <label for="notes">Notes</label>
+      <textarea id="notes" name="notes" placeholder="Anything you'd like us to know"></textarea>
+    </div>
+    <button type="submit" class="connect-submit" id="submitBtn">Connect</button>
+  </form>
+
+  <div class="connect-success" id="successMsg">
+    <div class="checkmark">&#10003;</div>
+    <h2>Got It</h2>
+    <p>Thanks for connecting. We'll be in touch soon.</p>
+  </div>
+</main>
+
+<div class="connect-footer">
+  <p><a href="https://supervisionvp.com">supervisionvp.com</a></p>
+</div>
+
+<script>
+// Connect form submission
+// Replace SCRIPT_URL with your Google Apps Script web app URL
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby2Jb401Q37SigKuI4URoGNmDarumBtaL83aPmmiY96FWkVqFGDWWvpO2qino1-6SVF/exec';
+
+const form = document.getElementById('connectForm');
+const submitBtn = document.getElementById('submitBtn');
+const successMsg = document.getElementById('successMsg');
+const errorMsg = document.getElementById('formError');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
+  errorMsg.classList.remove('show');
+
+  const data = {
+    name: form.name.value.trim(),
+    email: form.email.value.trim(),
+    company: form.company.value.trim(),
+    role: form.role.value.trim(),
+    notes: form.notes.value.trim(),
+    source: 'BSC Expo 2026',
+    timestamp: new Date().toISOString()
+  };
+
+  try {
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    // no-cors means we can't read the response, but if it didn't throw, it sent
+    form.style.display = 'none';
+    successMsg.classList.add('show');
+  } catch (err) {
+    errorMsg.classList.add('show');
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Connect';
+  }
+});
+</script>
+
+</body>
+</html>
