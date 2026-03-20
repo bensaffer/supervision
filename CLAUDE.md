@@ -38,6 +38,15 @@ The design aesthetic is premium, cinematic, and production-forward. Key things t
 - **Stripes:** The colored stripe accents are the brand's signature element
 - **Texture:** Subtle film grain overlay for depth
 
+## QR Code Tracking (Merch)
+
+A redirect is set up in `vercel.json` so branded merch (t-shirts, jumpers etc.) can have a QR code that tracks scans:
+
+- **QR code points to:** `supervision.tv/tshirt`
+- **Redirects to:** homepage with `?ref=tshirt`
+- **How to check stats:** Go to [vercel.com](https://vercel.com) → Supervision project → **Analytics** tab. Filter by path `/tshirt` to see how many people scanned the QR code. You may need to enable Analytics first (free tier is fine - just click "Enable" on the Analytics tab).
+- **Adding more redirects:** Edit `vercel.json` to add new source/destination pairs (e.g. `/hoodie`, `/sticker`).
+
 ## Tech Stack
 
 - Pure HTML5, CSS3, JavaScript (ES6)
