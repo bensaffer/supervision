@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/tshirt",
+      "destination": "/?ref=tshirt",
+      "permanent": false
+    }
+  ]
+}
