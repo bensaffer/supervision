@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Connect – Supervision VP</title>
-  <meta name="description" content="Connect with Supervision at BSC Expo 2026.">
+  <meta name="description" content="Connect with Supervision VP.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="styles.css"/>
   <style>
@@ -251,7 +251,7 @@
 <main class="connect-main">
   <div class="connect-intro">
     <h1>Let's Connect</h1>
-    <p>Drop your details and we'll follow up after the show.</p>
+    <p id="connectSubtitle">Drop your details and we'll follow up after the event.</p>
     <div class="connect-stripe"><span></span><span></span></div>
   </div>
 
@@ -296,9 +296,25 @@
 </div>
 
 <script>
-// Connect form submission
-// Replace SCRIPT_URL with your Google Apps Script web app URL
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby2Jb401Q37SigKuI4URoGNmDarumBtaL83aPmmiY96FWkVqFGDWWvpO2qino1-6SVF/exec';
+
+const TEAM = {
+  ben:   'Ben',
+  rhys:  'Rhys',
+  lou:   'Lou',
+  james: 'James'
+};
+
+// Read ?ref= from URL
+const refParam = new URLSearchParams(window.location.search).get('ref') || '';
+const refName = TEAM[refParam.toLowerCase()] || null;
+const source = refName ? 'VP Gathering 2026 — ' + refName : 'VP Gathering 2026';
+
+// Personalise subtitle if ref is known
+if (refName) {
+  document.getElementById('connectSubtitle').textContent =
+    'You\u2019re talking to ' + refName + '. Drop your details and we\u2019ll follow up.';
+}
 
 const form = document.getElementById('connectForm');
 const submitBtn = document.getElementById('submitBtn');
@@ -318,7 +334,7 @@ form.addEventListener('submit', async (e) => {
     company: form.company.value.trim(),
     role: form.role.value.trim(),
     notes: form.notes.value.trim(),
-    source: 'BSC Expo 2026',
+    source: source,
     timestamp: new Date().toISOString()
   };
 
@@ -330,7 +346,6 @@ form.addEventListener('submit', async (e) => {
       body: JSON.stringify(data)
     });
 
-    // no-cors means we can't read the response, but if it didn't throw, it sent
     form.style.display = 'none';
     successMsg.classList.add('show');
   } catch (err) {
