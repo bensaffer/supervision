@@ -1,8 +1,29 @@
 {
+  "cleanUrls": true,
   "redirects": [
     {
       "source": "/tshirt",
       "destination": "/?ref=tshirt",
+      "permanent": false
+    },
+    {
+      "source": "/ben",
+      "destination": "/connect?ref=ben",
+      "permanent": false
+    },
+    {
+      "source": "/rhys",
+      "destination": "/connect?ref=rhys",
+      "permanent": false
+    },
+    {
+      "source": "/lou",
+      "destination": "/connect?ref=lou",
+      "permanent": false
+    },
+    {
+      "source": "/james",
+      "destination": "/connect?ref=james",
       "permanent": false
     }
   ]
